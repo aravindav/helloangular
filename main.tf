@@ -1,10 +1,6 @@
 # configured aws provider and backend with proper credentials
 provider "aws" {
   region = "us-east-1"
-  assume_role {
-    role_arn     = "arn:aws:iam::638067550830:role/jenkins-terraform-role" # This value is from IAM ->Roles-> copy the ARN
-    session_name = "terraform-sts"
-  }
 }
 terraform {
   backend "s3" {
