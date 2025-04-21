@@ -9,10 +9,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = var.s3_bucket
-    key            = var.s3_key
-    region         = var.aws_region
-    role_arn       = var.role_arn
-    dynamodb_table = var.dynamodb_table
+    bucket         = "rs-terraform-statefile01"
+    key            = "terraform-statefile"
+    region         = "us-west-1"
+    dynamodb_table = "rs-terraform-statetable"
+    # role_arn is not a supported argument in backend config
   }
 }
