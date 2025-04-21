@@ -17,7 +17,7 @@ terraform {
 }
 # Define the AWS instance
 resource "aws_instance" "this" {
-  ami           = "ami-084568db4383264d4" # us-east-1
+  ami           = "ami-084568db4383264d4" # us-east-1. Get this value from the EC2 -> AMI ID section
   instance_type = "t2.micro"
   key_name      = "awskeypair"
   tags = {
