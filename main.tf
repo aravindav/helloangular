@@ -12,7 +12,7 @@ terraform {
     key            = "terraform-statefile"
     region         = "us-east-1"
     role_arn       = "arn:aws:iam::640111764884:role/stsassume-role"
-    dynamodb_table = "rs-terraform-statetable"
+    dynamodb_table = "av-jenkins-terraform-dynamodb-demo-angular01"
   }
 }
 # Define the AWS instance
