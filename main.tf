@@ -8,9 +8,9 @@ provider "aws" {
 }
 terraform {
   backend "s3" {
-    bucket         = "rs-terraform-statefile01"
+    bucket         = "av-jenkins-terraform-s3-demo-angular01"
     key            = "terraform-statefile"
-    region         = "us-west-1"
+    region         = "us-east-1"
     role_arn       = "arn:aws:iam::640111764884:role/stsassume-role"
     dynamodb_table = "rs-terraform-statetable"
   }
