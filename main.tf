@@ -11,7 +11,6 @@ terraform {
     bucket         = "av-jenkins-terraform-s3-demo-angular01"
     key            = "terraform-statefile"
     region         = "us-east-1"
-    role_arn       = "arn:aws:iam::638067550830:role/jenkins-terraform-role" # This value is from IAM ->Roles-> copy the ARN
     dynamodb_table = "av-jenkins-terraform-dynamodb-demo-angular01"
   }
 }
