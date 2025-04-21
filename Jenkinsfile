@@ -1,45 +1,41 @@
 pipeline {
-    
+    agent any
+
     environment {
         AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
     }
 
-   pipeline {
-    agent any
-    
     stages {
-        stage ("checkout from GIT") {
+        stage ("Checkout from Git") {
             steps {
                 git branch: 'main', url: 'https://github.com/aravindav/helloangular.git'
-               
             }
         }
-        stage ("terraform init") {
+        stage ("Terraform Init") {
             steps {
                 sh 'terraform init'
             }
         }
-        stage ("terraform fmt") {
+        stage ("Terraform Fmt") {
             steps {
                 sh 'terraform fmt'
             }
         }
-        stage ("terraform validate") {
+        stage ("Terraform Validate") {
             steps {
                 sh 'terraform validate'
             }
         }
-        stage ("terrafrom plan") {
+        stage ("Terraform Plan") {
             steps {
-                sh 'terraform plan '
+                sh 'terraform plan'
             }
         }
-        stage ("terraform apply") {
+        stage ("Terraform Apply") {
             steps {
                 sh 'terraform apply --auto-approve'
             }
         }
-     }
-   }
-}    
+    }
+}
