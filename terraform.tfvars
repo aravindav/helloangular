@@ -1,0 +1,5 @@
+aws_region     = "us-west-1"
+ami_id         = "ami-073e64e4c237c08ad"
+instance_type  = "t2.micro"
+key_name       = "awskeypair"
+bucket_name    = "my-terraform-demo-bucket-123456"
