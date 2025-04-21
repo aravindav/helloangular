@@ -1,24 +1,39 @@
 variable "aws_region" {
-  description = "AWS region to deploy resources in"
   type        = string
+  description = "AWS region to deploy to"
+}
+
+variable "role_arn" {
+  type        = string
+  description = "IAM Role to assume"
+}
+
+variable "s3_bucket" {
+  type        = string
+  description = "S3 bucket for backend"
+}
+
+variable "s3_key" {
+  type        = string
+  description = "S3 key (path) for state file"
+}
+
+variable "dynamodb_table" {
+  type        = string
+  description = "DynamoDB table for locking"
 }
 
 variable "ami_id" {
-  description = "AMI ID for EC2"
   type        = string
+  description = "AMI ID for the EC2 instance"
 }
 
 variable "instance_type" {
-  description = "EC2 instance type"
   type        = string
+  description = "EC2 instance type"
 }
 
 variable "key_name" {
-  description = "Name of the existing AWS key pair"
   type        = string
-}
-
-variable "bucket_name" {
-  description = "Unique name for S3 bucket"
-  type        = string
+  description = "Name of the SSH key pair"
 }
